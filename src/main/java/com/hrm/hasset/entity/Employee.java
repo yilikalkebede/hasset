@@ -93,6 +93,10 @@ public class Employee implements Serializable {
     private String additionalContactInfo;
 
     @ManyToOne
+    @JoinColumn(name = "department_id")
+    private Department department;
+
+    @ManyToOne
     @JoinColumn(name = "address_id")
     private Address address;
 

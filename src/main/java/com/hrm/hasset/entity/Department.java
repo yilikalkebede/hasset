@@ -1,10 +1,12 @@
 package com.hrm.hasset.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.Set;
 
 @Entity
 @Table(name = "department")
@@ -32,5 +34,9 @@ public class Department implements Serializable {
 
     @Column(name = "business_entity_id")
     private Integer businessEntityId;
+
+    @JsonBackReference
+    @OneToMany(mappedBy = "department")
+    private Set<Employee> employees;
 
 }
