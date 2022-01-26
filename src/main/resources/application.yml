@@ -1,0 +1,11 @@
+server:
+  port: 8101
+spring:
+  application:
+    name: hasset-hrm
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/hrm4_db
+    username: root
+    password: e@113177
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
