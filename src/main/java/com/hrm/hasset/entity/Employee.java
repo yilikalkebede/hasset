@@ -2,6 +2,8 @@ package com.hrm.hasset.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -10,6 +12,8 @@ import java.sql.Timestamp;
 
 @Entity
 @Data
+@Getter
+@Setter
 @Table(name = "employee")
 public class Employee implements Serializable {
 
@@ -29,7 +33,7 @@ public class Employee implements Serializable {
     @Column(name = "last_name")
     private String lastName;
 
-    @Column(name = "name_style", nullable = false)
+    @Column(name = "name_style")
     private Integer nameStyle;
 
     @Column(name = "employee_type")
@@ -53,29 +57,29 @@ public class Employee implements Serializable {
     @Column(name = "employee_number")
     private String employeeNumber;
 
-    @Column(name = "current_flag", nullable = false)
-    private Integer currentFlag;
+    @Column(name = "current_flag")
+    private Boolean currentFlag;
 
     @Column(name = "hire_date")
     private Date hireDate;
 
-    @Column(name = "salaried_flag", nullable = false)
+    @Column(name = "salaried_flag")
     private Integer salariedFlag;
 
     @Column(name = "created_by")
     private String createdBy;
 
-    @Column(name = "created_date", nullable = false)
+    @Column(name = "created_date")
     private Timestamp createdDate;
 
     @Column(name = "modified_by")
     private String modifiedBy;
 
-    @Column(name = "modified_date", nullable = false)
+    @Column(name = "modified_date")
     private Timestamp modifiedDate;
 
     @Column(name = "deactivation_flag")
-    private Integer deactivationFlag = 0;
+    private Boolean deactivationFlag;
 
     @Column(name = "deactivation_date")
     private Timestamp deactivationDate;
@@ -86,7 +90,7 @@ public class Employee implements Serializable {
     @Column(name = "departure_date")
     private Timestamp departureDate;
 
-    @Column(name = "email_promotion", nullable = false)
+    @Column(name = "email_promotion")
     private Integer emailPromotion;
 
     @Column(name = "additional_contact_info")
